@@ -29,26 +29,26 @@ def main():
     
     # Parâmetros para geração da RMN
     num_echoes = 3000                # Quantidade de ecos
-    TE = 0.2                         # Tempo de Eco (0.2 ms é o padrão da indústria)
+    TE = 0.2                         # Tempo de Eco (0.2 ms é o padrão)
     t = np.arange(1, num_echoes + 1) * TE 
     T2_bins = np.logspace(-1, 4, 100) # Range T2 de 0.1 ms a 10000 ms, com 100 bins
     noise_level = 0.3             # Nível do ruído sintético
     
     # Matriz de decaimento calculada uma única vez para otimização
-    Matriz_Exp = np.exp(-t[:, None] / T2_bins[None, :])
+    Matriz_Exp = np.exp(-t[:, None] / T2_bins[None, :]) # Matriz de decaimento 
     
     resultados = []
     
     print(f"Processando {len(df)} registros para gerar curvas sintéticas...")
     
-    # Iterar por todas as linhas do CSV
+    # Iterar por todas as linhas do dataset
     for index, row in df.iterrows():
         # Variáveis extraídas da linha
         vol_irr = row["MBVI"]                  # Volume preso (pico rápido)
         vol_free = row["MPHI"] - row["MBVI"]   # Volume livre (pico lento)
         swirr_phix = row["Swirr_PHIX"]         # Saturação de Água Irredutível (Target)
         
-        # Tratamento de segurança caso ruído nos dados crie porosidade negativa
+        # Tratamento p evitar valor negativo
         vol_free = max(0, vol_free)
         vol_irr = max(0, vol_irr)
         
@@ -57,8 +57,10 @@ def main():
         vol_free2 = vol_free * 0.6
         
         # GERANDO AS CURVAS
-        curve_irr = log_normal_t2(T2_bins, mu_t2=15, sigma=0.25, absolute_volume=vol_irr)
-        curve_free1 = log_normal_t2(T2_bins, mu_t2=60, sigma=0.2, absolute_volume=vol_free1)
+        # 15 ms para argila/capilar
+        curve_irr = log_normal_t2(T2_bins, mu_t2=15, sigma=0.25, absolute_volume=vol_irr) 
+        # 60 ms e 150 ms para poros maiores
+        curve_free1 = log_normal_t2(T2_bins, mu_t2=60, sigma=0.2, absolute_volume=vol_free1) 
         curve_free2 = log_normal_t2(T2_bins, mu_t2=150, sigma=0.15, absolute_volume=vol_free2)
         
         P_T2 = curve_irr + curve_free1 + curve_free2
@@ -92,11 +94,9 @@ def main():
     
     df_rmn.to_csv(output_path, index=False)
     
-    print("--------------------------------------------------")
-    print("✅ Processo Finalizado!")
-    print(f"📁 Arquivo salvo em: {output_path}")
-    print(f"📊 Dimensão do dataset salvo: {df_rmn.shape[0]} linhas x {df_rmn.shape[1]} colunas")
-    print("--------------------------------------------------")
+    print("Processo Finalizado!")
+    print(f"Arquivo salvo em: {output_path}")
+    print(f"Dimensão do dataset salvo: {df_rmn.shape[0]} linhas x {df_rmn.shape[1]} colunas")
 
 if __name__ == "__main__":
     main()
