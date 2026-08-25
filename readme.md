@@ -1,6 +1,6 @@
 # RMN Synthetics Data: Constructing a Synthetic NMR Echo Data from volumetric well-logging
 
-![Logo do projeto](image.png)
+![Logo do projeto](data/image.png)
 
 This project provides an analytical and computational pipeline for generating raw synthetic Nuclear Magnetic Resonance (NMR) echo train signals from volumetric well-logging data, such as `MPHI`, `MBVI`, and `PHIX`.
 
@@ -54,7 +54,7 @@ The main notebook that centralizes the processing and final synthesis:
 ## References
 
 1. Coates, G.R., Xiao, L., and Prammer, M.G. (1999). _NMR Logging Principles and Applications_ . Halliburton Energy Services, (chapters detailing the Coates and SDR permeability models and **$T_2$** cutoffs).
-2. Howard, J.J., Kenyon, W.E., and Straley, C. (1993). _Proton magnetic resonance and pore size variations in reservoir sandstones_ . SPE Formation Evaluation, 8(03), 194-200.
+2. Howard, J.J., Kenyon, W.E., and Straley, C. (1993). _Proton magnetic resonance and pore size variations in reservoir sandstones_ . SPE Formation Evaluation, 194-200.
 3. [Gulf of Mexico Gas Hydrate Dataset](https://www.usgs.gov/publications/gulf-mexico-gas-hydrate-joint-industry-project-leg-ii-logging-while-drilling-data): Collett, T. S., Lee, M. W., Zyrianova, M. V., Mrozewski, S. a., Guerin, G., Cook, A. E., and Goldberg, D. S. (2012). _Gulf of Mexico Gas Hydrate Joint Industry Project Leg II logging-while-drilling data acquisition and analysis. Marine and Petroleum Geology_ (DOI: 10.1016/j.marpetgeo.2011.08.003).
 4. [Open-Source-Petrophysics](https://github.com/Philliec459/Open-Source-Petrophysics) by Craig Phillips - _Open-source repository focused on subsurface data analysis tools._
 5. [synthetic_well-log_polynomial_regression](https://github.com/abhishekdbihani/synthetic_well-log_polynomial_regression) by Abhishek Bihani - _ML project for constructing missing well-logs from other existing physical evaluations._

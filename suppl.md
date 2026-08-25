@@ -12,7 +12,7 @@ A ferramenta de RMN aplica uma sequência de pulsos e registra uma série de eco
 
 O sinal observado é composto pela soma das contribuições de fluidos localizados em diferentes tipos de poros:
 
-$M(t) =$
+$M(t) = \sum T\_{2i} A_i $
 
 onde:
 

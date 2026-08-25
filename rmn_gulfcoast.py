@@ -94,7 +94,6 @@ def main():
     
     df_rmn.to_csv(output_path, index=False)
     
-    print("Processo Finalizado!")
     print(f"Arquivo salvo em: {output_path}")
     print(f"Dimensão do dataset salvo: {df_rmn.shape[0]} linhas x {df_rmn.shape[1]} colunas")
 
