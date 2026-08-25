@@ -58,3 +58,7 @@ The main notebook that centralizes the processing and final synthesis:
 3. [Gulf of Mexico Gas Hydrate Dataset](https://www.usgs.gov/publications/gulf-mexico-gas-hydrate-joint-industry-project-leg-ii-logging-while-drilling-data): Collett, T. S., Lee, M. W., Zyrianova, M. V., Mrozewski, S. a., Guerin, G., Cook, A. E., and Goldberg, D. S. (2012). _Gulf of Mexico Gas Hydrate Joint Industry Project Leg II logging-while-drilling data acquisition and analysis. Marine and Petroleum Geology_ (DOI: 10.1016/j.marpetgeo.2011.08.003).
 4. [Open-Source-Petrophysics](https://github.com/Philliec459/Open-Source-Petrophysics) by Craig Phillips - _Open-source repository focused on subsurface data analysis tools._
 5. [synthetic_well-log_polynomial_regression](https://github.com/abhishekdbihani/synthetic_well-log_polynomial_regression) by Abhishek Bihani - _ML project for constructing missing well-logs from other existing physical evaluations._
+
+## Citation
+
+Reis, A., & Mamede Botelho, L. (2026). Nuclear Magnetic Resonance Synthetics Dataset from Gulf of Mexico Gas Hydrate [Dataset]. [https://doi.org/10.5281/zenodo.22097128](https://doi.org/10.5281/zenodo.22097128)
